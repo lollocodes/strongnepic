@@ -3,7 +3,7 @@ export interface GymClass {
     name: string;
     capacity: number;
     booked: number;
-    duration: number;
     date: string;
+    duration: number;
   };
   

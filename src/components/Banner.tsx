@@ -9,7 +9,7 @@ function Banner(props: PageBannerProps): JSX.Element {
   return (
     <header>
       <h2>My awesome website</h2>
-      <p>Welcome {props.user.role} {props.user.name}</p>
+      <p>Welcome {props.user.role} {props.user.username}</p>
     </header>
   )
 }
