@@ -4,8 +4,10 @@ const UserBookingPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Booking List</h2>
-      <p>lista på bokade kurser här...</p>
+      <h2>Kettlebell</h2>
+      <p>60 min</p>
+      <p>Bokar som <b>Anna Andersson</b></p>
+      <button>Bekräfta bokning</button>
     </div>
   );
 };
