@@ -40,28 +40,7 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
         username: username,
         password: password,
         role: "USER",
-        "bookedClasses": [
-          {
-            "id": 1,
-            "name": "Kettlebell",
-            "capacity": 20,
-            "booked": 5,
-            "date": "2023-09-10",
-            "time": "18:00",
-            "duration": 60,
-            "bookedUsers": []
-          },
-          {
-            "id": 3,
-            "name": "FYS",
-            "capacity": 10,
-            "booked": 8,
-            "date": "2023-09-15",
-            "time": "18:00",
-            "duration": 55,
-            "bookedUsers": []
-          }
-        ]
+        "bookedClasses": []
       };
       onLogin(user);
       navigate("/")
