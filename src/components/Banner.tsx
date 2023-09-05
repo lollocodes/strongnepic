@@ -17,7 +17,7 @@ const Banner: React.FC<PageBannerProps> = ({ user, onLogout }) => {
     <div className='banner'> 
       <h1 className='header'>Strong n' Epic</h1>
       <p>Welcome {user.role} {user.username}</p>
-      <button onClick={handleLogout}>Logga ut</button>
+      <button className='submitBtn' onClick={handleLogout}>Logga ut</button>
     </div>
       
   )

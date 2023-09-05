@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { User } from '../types/User';
+import './../App.css';
 
 type LoginProps = {
   onLogin: (user: User) => void; // Callback function to handle successful login
@@ -47,7 +48,8 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
             "booked": 5,
             "date": "2023-09-10",
             "time": "18:00",
-            "duration": 60
+            "duration": 60,
+            "bookedUsers": []
           },
           {
             "id": 3,
@@ -56,7 +58,8 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
             "booked": 8,
             "date": "2023-09-15",
             "time": "18:00",
-            "duration": 55
+            "duration": 55,
+            "bookedUsers": []
           }
         ]
       };

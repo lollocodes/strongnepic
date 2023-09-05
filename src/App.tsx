@@ -47,6 +47,14 @@ function App() {
     localStorage.clear();
   };
 
+  const bookClass = (selectedClass: GymClass, user: User) => {
+    console.log(user)
+    console.log(selectedClass)
+    if (selectedClass.bookedUsers.length < selectedClass.capacity ) {
+      selectedClass.bookedUsers.push(user);
+    }
+  }
+
   return (
     <Router>
       <div>
@@ -56,7 +64,7 @@ function App() {
           <>
             <Banner onLogout={handleLogout} user={user} />
             <Routes>
-              <Route path="/" element={<LandingPage user={user} classes={classes} />} />
+              <Route path="/" element={<LandingPage bookClass={bookClass} user={user} classes={classes} />} />
               <Route path="/book" element={<UserBookingPage user={user} />} />
               <Route path="/admin" element={<AdminPage />} />
             </Routes>

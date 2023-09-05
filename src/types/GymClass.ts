@@ -1,3 +1,5 @@
+import { User } from "./User";
+
 export interface GymClass {
     id: number;
     name: string;
@@ -6,5 +8,6 @@ export interface GymClass {
     date: string;
     time: string;
     duration: number;
+    bookedUsers: User[];
   };
   

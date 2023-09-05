@@ -41,7 +41,8 @@
         "booked": 5,
         "date": "2023-09-10",
         "time": "18:00",
-        "duration": 60
+        "duration": 60,
+        "bookedUsers": []
       },
       {
         "id": 2,
@@ -50,7 +51,8 @@
         "booked": 10,
         "date": "2023-09-12",
         "time": "18:00",
-        "duration": 60
+        "duration": 60,
+        "bookedUsers": []
       },
       {
         "id": 3,
@@ -59,7 +61,8 @@
         "booked": 8,
         "date": "2023-09-15",
         "time": "18:00",
-        "duration": 55
+        "duration": 55,
+        "bookedUsers": []
       }
     ]
   }

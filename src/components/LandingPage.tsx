@@ -14,13 +14,12 @@ const formatDate = (dateString: string): string => {
 type LandingPageProps = {
   classes: GymClass[];
   user: User;
+  bookClass: (selectedClass: GymClass, user: User) => void;
 };
 
-const LandingPage: React.FC<LandingPageProps> = ({ user, classes }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ user, classes, bookClass }) => {
   const navigate = useNavigate()
 
-
-  
   return (
     <ul>
       <h2>Dina bokade klasser</h2>
@@ -30,6 +29,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ user, classes }) => {
             <span>{formatDate(cls.date)}</span>
             <span>{cls.time}</span>
             {cls.name}
+            <button>Avboka</button>
           </p>
         </li>
       ))}
@@ -40,6 +40,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ user, classes }) => {
             <span>{formatDate(cls.date)}</span>
             <span>{cls.time}</span>
             {cls.name}
+            <button onClick={() => bookClass(cls, user)}>Boka</button>
           </p>
         </li>
       ))}
