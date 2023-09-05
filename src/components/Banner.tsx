@@ -1,16 +1,25 @@
 import { User } from './../types/User';
+import './../App.css';
+
 
 type PageBannerProps = {
   user: User,
+  onLogout: () => void; 
 }
 
-function Banner(props: PageBannerProps): JSX.Element {
+const Banner: React.FC<PageBannerProps> = ({ user, onLogout }) => {
   
+  const handleLogout = () => {
+    onLogout();
+  }
+
   return (
-    <header>
-      <h2>My awesome website</h2>
-      <p>Welcome {props.user.role} {props.user.username}</p>
-    </header>
+    <div className='banner'> 
+      <h1 className='header'>Strong n' Epic</h1>
+      <p>Welcome {user.role} {user.username}</p>
+      <button onClick={handleLogout}>Logga ut</button>
+    </div>
+      
   )
 }
 

@@ -1,3 +1,5 @@
+import { GymClass } from "./GymClass";
+
 export type UserRole = "USER" | "ADMIN";
 
 export interface User {
@@ -5,4 +7,5 @@ export interface User {
   username: string;
   password: string;
   role: UserRole;
+  bookedClasses: GymClass[];
 };

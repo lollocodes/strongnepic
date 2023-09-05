@@ -1,29 +1,49 @@
-import React from 'react';
+// LandingPage.tsx
+import React, { useEffect } from 'react';
+import { GymClass } from '../types/GymClass';
+import { useNavigate } from 'react-router';
+import { User } from '../types/User';
 
-const LandingPage: React.FC = () => {
+const formatDate = (dateString: string): string => {
+  const options: Intl.DateTimeFormatOptions = { weekday: 'long'};
+  const date = new Date(dateString);
+  return date.toLocaleDateString('sv', options);
+};
 
+
+type LandingPageProps = {
+  classes: GymClass[];
+  user: User;
+};
+
+const LandingPage: React.FC<LandingPageProps> = ({ user, classes }) => {
+  const navigate = useNavigate()
+
+
+  
   return (
-    <div>
-      <h2>Dina bokade pass</h2>
-      <ul>
-        <li>
-            <p><span>18:00</span>FYS</p>
+    <ul>
+      <h2>Dina bokade klasser</h2>
+      {user.bookedClasses.map((cls) => (
+        <li key={cls.id}>
+          <p>
+            <span>{formatDate(cls.date)}</span>
+            <span>{cls.time}</span>
+            {cls.name}
+          </p>
         </li>
-        <li>
-            <p><span>18:00</span>Kettlebell</p>
+      ))}
+      <h2>Kommande pass</h2>
+      {classes.map((cls) => (
+        <li key={cls.id}>
+          <p>
+            <span>{formatDate(cls.date)}</span>
+            <span>{cls.time}</span>
+            {cls.name}
+          </p>
         </li>
-      </ul>
-      <h2>Träningspass</h2>
-      <h3>Måndag, 4 september</h3>
-      <ul>
-        <li>
-            <p><span>18:00</span>FYS</p>
-        </li>
-        <li>
-            <p><span>18:00</span>Kettlebell</p>
-        </li>
-      </ul>
-    </div>
+      ))}
+    </ul>
   );
 };
 

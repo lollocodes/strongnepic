@@ -4,7 +4,27 @@
         "id": 1,
         "username": "Anna",
         "password": "password",
-        "role": "USER"
+        "role": "USER",
+        "bookedClasses": [
+          {
+            "id": 1,
+            "name": "Kettlebell",
+            "capacity": 20,
+            "booked": 5,
+            "date": "2023-09-10",
+            "time": "18:00",
+            "duration": 60
+          },
+          {
+            "id": 3,
+            "name": "FYS",
+            "capacity": 10,
+            "booked": 8,
+            "date": "2023-09-15",
+            "time": "18:00",
+            "duration": 55
+          }
+        ]
       },
       {
         "id": 2,
@@ -20,6 +40,7 @@
         "capacity": 20,
         "booked": 5,
         "date": "2023-09-10",
+        "time": "18:00",
         "duration": 60
       },
       {
@@ -28,6 +49,7 @@
         "capacity": 15,
         "booked": 10,
         "date": "2023-09-12",
+        "time": "18:00",
         "duration": 60
       },
       {
@@ -36,6 +58,7 @@
         "capacity": 10,
         "booked": 8,
         "date": "2023-09-15",
+        "time": "18:00",
         "duration": 55
       }
     ]
