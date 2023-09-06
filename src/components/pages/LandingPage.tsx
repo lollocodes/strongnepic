@@ -1,12 +1,11 @@
+// LoginPage.tsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { User } from '../types/User';
-import './../App.css';
+import { User } from '../../types/User';
 
 type LoginProps = {
   onLogin: (user: User) => void;
   users: User[];
-
 };
 
 const LoginPage: React.FC<LoginProps> = ({ onLogin, users }) => {
@@ -15,19 +14,6 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin, users }) => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Check if a user is already logged in
-    const loggedInUser = localStorage.getItem('current user');
-
-    if (loggedInUser) {
-      // If a user is logged in, parse the JSON and perform the login
-      const parsedUser = JSON.parse(loggedInUser);
-      onLogin(parsedUser);
-      // Redirect to the landing page
-      navigate('/');
-    }
-  }, []);
-
   const handleLogin = (email: string, password: string) => {
     // Check if loggedInUser exists in mockData
     const existingUser = users.find(
@@ -35,10 +21,10 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin, users }) => {
         user.email === email &&
         user.password === password
     );
-    
-    if (existingUser) { 
+
+    if (existingUser) {
       // If the user exists in mockData, perform the login
-      onLogin(existingUser as User); 
+      onLogin(existingUser as User);
       localStorage.setItem('current user', JSON.stringify(existingUser));
       // Redirect to the landing page
       if (existingUser.role === "ADMIN") {
@@ -62,13 +48,6 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin, users }) => {
       onLogin(parsedUser);
     }
   }, []);
-  
-  
-  
-  
-    
-
-
 
   return (
     <div>

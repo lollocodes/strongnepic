@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-import LandingPage from './components/LandingPage';
-import AdminPage from './components/AdminPage';
-import LoginPage from './components/Login';
+import LandingPage from './components/pages/BookingPage';
+import AdminPage from './components/pages/AdminPage';
+import LoginPage from './components/pages/LandingPage';
 import { User } from './types/User';
 import Banner from './components/Banner';
 import { Booking } from './types/Booking';
