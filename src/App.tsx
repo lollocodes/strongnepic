@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import LandingPage from './components/LandingPage';
-import UserBookingPage from './components/UserBookingPage';
 import AdminPage from './components/AdminPage';
 import LoginPage from './components/Login';
 import { User } from './types/User';
@@ -15,9 +14,10 @@ function App() {
   const [user, setUser] = useState<User | null>(null);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [classes, setClasses] = useState<GymClass[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch('/data/mockData.json')
+    fetch('/mockData.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -27,12 +27,14 @@ function App() {
       .then((data) => {
         if (data && data.classes) {
           setClasses(data.classes);
+          setUsers(data.users);
         }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
+  
 
   const addBooking = (booking: Booking) => {
     setBookings([...bookings, booking]);
@@ -47,20 +49,17 @@ function App() {
     localStorage.clear();
   };
 
-
-
   return (
     <Router>
       <div>
-      {!user ? (
-          <LoginPage onLogin={handleLogin} />
+        {!user ? (
+          <LoginPage users={users} onLogin={handleLogin} />
         ) : (
           <>
             <Banner onLogout={handleLogout} user={user} />
             <Routes>
               <Route path="/" element={<LandingPage setUser={setUser} user={user} classes={classes} />} />
-              <Route path="/book" element={<UserBookingPage user={user} />} />
-              <Route path="/admin" element={<AdminPage user={user} classes={classes}/>} />
+              <Route path="/admin" element={<AdminPage setClasses={setClasses} users={users} classes={classes} />} />
             </Routes>
           </>
         )}

@@ -1,11 +1,9 @@
-import { GymClass } from "./GymClass";
-
-export type UserRole = "USER" | "ADMIN";
 
 export interface User {
   id: number;
-  username: string;
+  email: string;
   password: string;
-  role: UserRole;
-  bookedClasses: GymClass[];
+  role: 'USER' | 'ADMIN';
+  bookedClasses: number[];
 };
+

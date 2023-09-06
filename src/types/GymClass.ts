@@ -8,6 +8,6 @@ export interface GymClass {
     date: string;
     time: string;
     duration: number;
-    bookedUsers: User[];
+    bookedUsers: number[];
   };
   
