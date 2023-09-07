@@ -5,14 +5,14 @@
       "email": "anna@epost.com",
       "password": "123",
       "role": "USER",
-      "bookedClasses": [1, 2]
+      "bookedClasses": []
     },
     {
       "id": 2,
       "email": "kalle@epost.com",
       "password": "123",
       "role": "USER",
-      "bookedClasses": [1]
+      "bookedClasses": [1, 2]
     },
     {
       "id": 3,
@@ -28,9 +28,9 @@
       "capacity": 20,
       "booked": 5,
       "date": "2023-09-10",
-      "time": "18:00",
-      "duration": 60,
-      "bookedUsers": [1, 2]
+      "starttime": "18:00",
+      "endtime": "19:00",
+      "bookedUsers": [2]
     },
     {
       "id": 2,
@@ -38,9 +38,9 @@
       "capacity": 15,
       "booked": 10,
       "date": "2023-09-12",
-      "time": "18:00",
-      "duration": 60,
-      "bookedUsers": [1]
+      "starttime": "18:00",
+      "endtime": "19:00",
+      "bookedUsers": [2]
     },
     {
       "id": 3,
@@ -48,8 +48,8 @@
       "capacity": 10,
       "booked": 8,
       "date": "2023-09-15",
-      "time": "18:00",
-      "duration": 55,
+      "starttime": "18:00",
+      "endtime": "19:00",
       "bookedUsers": []
     }
   ]

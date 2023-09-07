@@ -1,7 +1,7 @@
 import React from 'react';
 import { GymClass } from '../types/GymClass';
 import { User } from '../types/User';
-import { formatDate } from '../utils/utils';
+import { formatDate, getMinutes } from '../utils/utils';
 
 type UpcomingClassesTableProps = {
   user: User;
@@ -18,8 +18,9 @@ const UpcomingClassesTable: React.FC<UpcomingClassesTableProps> = ({ user, class
         </tr>
         <tr>
           <th>Datum</th>
-          <th>Tid</th>
           <th>Namn</th>
+          <th>Tid</th>
+          <th>Varaktighet</th>
           <th>Bokade platser</th>
           <th>Åtgärder</th>
         </tr>
@@ -28,8 +29,9 @@ const UpcomingClassesTable: React.FC<UpcomingClassesTableProps> = ({ user, class
         {classes.map((cls) => (
           <tr key={cls.id}>
             <td>{formatDate(cls.date)}</td>
-            <td>{cls.time}</td>
             <td>{cls.name}</td>
+            <td>{cls.starttime} - {cls.endtime}</td>
+            <td>{getMinutes(cls.starttime, cls.endtime)} min</td>
             <td>
               {cls.bookedUsers.length} / {cls.capacity}
             </td>

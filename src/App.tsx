@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import LandingPage from './components/pages/BookingPage';
 import AdminPage from './components/pages/AdminPage';
@@ -25,7 +25,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        if (data && data.classes) {
+        if (data.classes && data.users) {
           setClasses(data.classes);
           setUsers(data.users);
         }
@@ -37,8 +37,8 @@ function App() {
   
 
   const addBooking = (booking: Booking) => {
-    setBookings([...bookings, booking]);
-  }
+    setBookings((prevBookings) => [...prevBookings, booking]);
+  };
 
   const handleLogin = (loggedInUser: User) => {
     setUser(loggedInUser);

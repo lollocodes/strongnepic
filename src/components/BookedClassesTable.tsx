@@ -2,7 +2,7 @@ import React from 'react';
 import { GymClass } from '../types/GymClass';
 import { User } from '../types/User';
 import { getClassById } from '../services/userService';
-import { formatDate } from '../utils/utils';
+import { formatDate, getMinutes } from '../utils/utils';
 
 type BookedClassesTableProps = {
   user: User;
@@ -17,9 +17,10 @@ const BookedClassesTable: React.FC<BookedClassesTableProps> = ({ user,  unBookCl
           <th>Dina bokade pass</th>
         </tr>
         <tr>
+          <th>Namn</th>
           <th>Datum</th>
           <th>Tid</th>
-          <th>Namn</th>
+          <th>Varaktighet</th>
           <th>Åtgärder</th>
         </tr>
       </thead>
@@ -28,9 +29,10 @@ const BookedClassesTable: React.FC<BookedClassesTableProps> = ({ user,  unBookCl
           const cls = getClassById(id);
           return (
             <tr key={cls?.id}>
-              <td>{cls?.date ? formatDate(cls.date) : ''}</td>
-              <td>{cls?.time}</td>
               <td>{cls?.name}</td>
+              <td>{cls?.date ? formatDate(cls.date) : ''}</td>
+              <td>{cls?.starttime} - {cls?.endtime}</td>
+              <td>{cls?.starttime && cls?.endtime ? getMinutes(cls.starttime, cls.endtime) + "min" : ''}</td>
               <td>
                 <button onClick={() => unBookClass(cls as GymClass, user as User)} className="cancelBtn">
                   Avboka

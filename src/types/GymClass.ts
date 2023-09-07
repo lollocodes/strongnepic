@@ -4,8 +4,8 @@ export interface GymClass {
     capacity: number;
     booked: number;
     date: string;
-    time: string;
-    duration: number;
+    starttime: string;
+    endtime: string;
     bookedUsers: number[];
   };
   

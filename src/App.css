@@ -4,9 +4,7 @@
   box-sizing: border-box;
 }
 
-label {
-  display: none;
-}
+
 
 .banner {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -81,12 +79,13 @@ label {
 }
 
 td {
-padding: 0 0.4em;
+padding: 0 2em;
 border-radius: 3px;
 background: #f0ecec;
 list-style-type: none;
 text-align: left;
 max-width: 500px;
+
 
 }
 
@@ -95,43 +94,91 @@ th {
   text-align: center;
   border-radius: 3px;
   color: black;
-  padding: 0 0.4em;
+  padding: 4 0.4em;
 }
 
-.sendBtn {
+.saveBtn {
   color: #fff;
   background-color: #595fb9;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 15px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   margin: 0.5em;
   position: left;
 }
 
+.saveBtn:hover {
+  background-color: #766692;
+}
+
+
 .input {
-  max-width: 20%;
     background-color: #f0ecec;
     border: 2px solid #ffffff;
     border-radius: 5px;
     padding: 10px;
     font-size: 15px;
     color: #333;
-    
 }
 
-.inputForm {
+
+
+/* Form styles*/
+.fieldset {
+    background-color: #9ba2ff31;
+    border: none;
+}
+.form-row {
+  display: flex;
+  margin: 32px 0;
+}
+
+.input-group label {
+  display: block;
+}
+
+form .form-row .input-group{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea{
+  height: 70px;
+}
+.input-group input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+  background-color: #fff;
+}
+
+table{
+  width: 100%;
+}
+
+/* .inputForm {
   display: flex;
   align-items: center;
   min-width: 900px;
  
-}
+} */
 
 
 @media screen and (min-width: 780px) {
 
 }
+
+
+
+
+
+
 
 
 
