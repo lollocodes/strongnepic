@@ -14,9 +14,6 @@ const BookedClassesTable: React.FC<BookedClassesTableProps> = ({ user,  unBookCl
     <table>
       <thead>
         <tr>
-          <th>Dina bokade pass</th>
-        </tr>
-        <tr>
           <th>Namn</th>
           <th>Datum</th>
           <th>Tid</th>

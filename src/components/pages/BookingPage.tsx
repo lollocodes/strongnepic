@@ -57,8 +57,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ user, classes, setUser }) => 
 
   return (
     <>
-      <BookedClassesTable user={user} unBookClass={unBookClass} />
-      <UpcomingClassesTable user={user} classes={classes} bookClass={bookClass} />
+      <section>
+        <h2>Dina bokade pass</h2>
+        <BookedClassesTable user={user} unBookClass={unBookClass} />
+      </section>
+      <section>
+        <h2>Kommande pass</h2>
+        <UpcomingClassesTable user={user} classes={classes} bookClass={bookClass} />
+      </section>
     </>
   );
 };

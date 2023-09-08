@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
-
+section {
+  margin: 2.5em 0;
+}
 
 .banner {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,6 +19,7 @@
 
 .bookedClass {
   color: black;
+  
 }
 
 .submitBtn {
@@ -81,11 +84,10 @@
 td {
 padding: 0 2em;
 border-radius: 3px;
-background: #f0ecec;
+background: #9BA2FF60;
 list-style-type: none;
 text-align: left;
 max-width: 500px;
-
 
 }
 
@@ -95,7 +97,11 @@ th {
   border-radius: 3px;
   color: black;
   padding: 4 0.4em;
+  background: #9BA2FF31;
+
 }
+
+
 
 .saveBtn {
   color: #fff;
@@ -130,27 +136,26 @@ th {
     background-color: #9ba2ff31;
     border: none;
 }
-.form-row {
-  display: flex;
-  margin: 32px 0;
-}
+
+/* Gjorde egen för h2, se längre ned */
+/* .form-row {
+  /* margin: 15px 0; */
+/* } */ 
 
 .input-group label {
   display: block;
 }
 
 form .form-row .input-group{
-  width: 100%;
-  height: 40px;
-  margin: 0 20px;
   position: relative;
+  margin: 0 1em;
 }
 form .form-row .textarea{
   height: 70px;
 }
 .input-group input {
   display: block;
-  width: 100%;
+  width: 300px;
   height: 100%;
   border: none;
   font-size: 17px;
@@ -158,9 +163,16 @@ form .form-row .textarea{
   background-color: #fff;
 }
 
+h2 {
+  margin: 10px 0;
+}
+
 table{
   width: 100%;
+  background-color: #9BA2FF31;
 }
+
+
 
 /* .inputForm {
   display: flex;

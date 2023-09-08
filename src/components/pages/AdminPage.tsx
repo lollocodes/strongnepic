@@ -34,16 +34,22 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
       <h1>Admin</h1>
 
       {/* Section for adding Gym classes */}
-      <h2>Lägg till pass</h2>
-      <CreateClassForm createNewClass={createNewClass} />
+      <section>
+        <h2>Lägg till pass</h2>
+        <CreateClassForm createNewClass={createNewClass} />
+      </section>
 
-      {/* Section for registered users */}
-      <h2>Registrerade användare</h2>
-      <UserTable users={users} />
+      <section>
+        {/* Section for registered users */}
+        <h2>Registrerade användare</h2>
+        <UserTable users={users} />
+      </section>
 
-      {/* Section for upcoming classes */}
-      <h2>Kommande pass</h2>
-      <GymClassTable classes={classes} onDeleteClass={onDeleteClass} />
+      <section>
+        {/* Section for upcoming classes */}
+        <h2>Kommande pass</h2>
+        <GymClassTable classes={classes} onDeleteClass={onDeleteClass} />
+      </section>
     </div>
   );
 };

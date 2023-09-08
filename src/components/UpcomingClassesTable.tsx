@@ -14,9 +14,6 @@ const UpcomingClassesTable: React.FC<UpcomingClassesTableProps> = ({ user, class
     <table>
       <thead>
         <tr>
-          <th>Kommande pass</th>
-        </tr>
-        <tr>
           <th>Datum</th>
           <th>Namn</th>
           <th>Tid</th>
