@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GymClass } from "../types/GymClass";
+import { generateUniqueId } from "../utils/utils";
 
 type CreateClassFormProps = {
     createNewClass : (newClass: GymClass) => void;
@@ -19,8 +20,26 @@ const CreateClassForm: React.FC<CreateClassFormProps> = ({ createNewClass }) => 
 
     const handleSubmitClass = (e: React.FormEvent) => {
         e.preventDefault();
-        createNewClass(newClass);
-    }
+        const newUniqueId = generateUniqueId();
+        const updatedNewClass: GymClass = {
+          ...newClass,
+          id: newUniqueId,
+        };
+        createNewClass(updatedNewClass); 
+        //empty out form fields
+        setNewClass({
+          id: 0,
+          name: "",
+          capacity: 0,
+          booked: 0,
+          date: "",
+          starttime: "",
+          endtime: "",
+          bookedUsers: [],
+        });
+      };
+
+
     return (
         <>
         <form className="inputForm" onSubmit={handleSubmitClass}>

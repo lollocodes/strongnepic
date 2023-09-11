@@ -16,6 +16,9 @@ export const getMinutes = (startTime: string, endTime: string): number => {
     const minutes = Math.floor(timeDifference / (1000 * 60));
   
     return minutes;
-  }
+ }
  
+export function generateUniqueId(): number {
+    return Math.floor(Math.random() * 1000000);
+  }
   
