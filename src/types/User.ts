@@ -6,4 +6,3 @@ export interface User {
   role: 'USER' | 'ADMIN';
   bookedClasses: number[];
 };
-

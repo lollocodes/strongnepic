@@ -8,9 +8,24 @@ section {
   margin: 2.5em 0;
 }
 
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+}
+
+.login-form label, .login-form input {
+  display: block;
+}
+
+.login-form input {
+  padding: 0.5em;
+}
+
 .banner {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   color: #595fb9;
   text-align: center;
   margin: 1em;
@@ -87,8 +102,7 @@ border-radius: 3px;
 background: #9BA2FF60;
 list-style-type: none;
 text-align: left;
-max-width: 500px;
-
+/* max-width: 500px; */
 }
 
 th {
@@ -98,7 +112,6 @@ th {
   color: black;
   padding: 4 0.4em;
   background: #9BA2FF31;
-
 }
 
 
