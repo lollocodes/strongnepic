@@ -68,7 +68,7 @@ const CreateClassForm: React.FC<CreateClassFormProps> = ({ createNewClass }) => 
                     <input value={newClass.endtime} onChange={(e) => setNewClass({...newClass, endtime: e.target.value})} required type="time" name="endtime" id="endtime" className="input" placeholder="Fyll i när passet slutar" />
                 </div>
             </div>
-            <input type="submit" className="saveBtn" name="skicka" id="skicka" value="Spara pass" />
+            <input type="submit" className="saveBtn" name="skicka" id="skicka" value="Lägg till pass" />
             </div>
         </form>
         </>

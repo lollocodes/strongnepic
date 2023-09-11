@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GymClass } from '../../types/GymClass';
 import { useNavigate } from 'react-router';
 import { User } from '../../types/User';
@@ -13,6 +13,7 @@ type AdminPageProps = {
 };
 
 const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => {
+  const [displayUsers, setDisplayUsers] = useState<boolean>(true);
 
   // Function to delete a class
   const onDeleteClass = (classId: number) => {
@@ -29,6 +30,14 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
     setClasses([...classes, newClass]);
   };
 
+  const handleUserClick = () => {
+    setDisplayUsers(true);
+  };
+
+  const handleGymClassClick = () => {
+    setDisplayUsers(false);
+  };
+
   return (
     <div>
       <h1>Admin</h1>
@@ -39,17 +48,16 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
         <CreateClassForm createNewClass={createNewClass} />
       </section>
 
-      <section>
-        {/* Section for registered users */}
-        <h2>Registrerade användare</h2>
-        <UserTable users={users} />
-      </section>
+      <div className='table-menu'>
+        <button className={`table-menu-btn ${displayUsers ? 'active-button' : 'inactive-button'}`}
+ onClick={handleUserClick}>Användare</button>
+        <button className={`table-menu-btn ${!displayUsers ? 'active-button' : 'inactive-button'}`}
+ onClick={handleGymClassClick}>Pass</button>
+      </div>
 
-      <section>
-        {/* Section for upcoming classes */}
-        <h2>Kommande pass</h2>
-        <GymClassTable classes={classes} onDeleteClass={onDeleteClass} />
-      </section>
+      {displayUsers ? <UserTable users={users} /> : <GymClassTable classes={classes} onDeleteClass={onDeleteClass} />}
+
+      
     </div>
   );
 };

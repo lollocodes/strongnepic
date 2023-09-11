@@ -11,8 +11,8 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
       <thead>
         <tr>
           <th>ID</th>
-          <th>Email</th>
-          <th>Role</th>
+          <th>E-post</th>
+          <th>Roll</th>
         </tr>
       </thead>
       <tbody>

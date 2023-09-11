@@ -77,7 +77,6 @@ section {
   cursor: pointer;
   font-size: 15px;
   padding: 5px 10px;
-  margin: 0.5em;
   position: left;
   
 }
@@ -93,11 +92,10 @@ section {
   text-align: left;
   padding-left: 1em;
   max-width: 500px;
-  
 }
 
 td {
-padding: 0 2em;
+padding: 1em 2em;
 border-radius: 3px;
 background: #9BA2FF60;
 list-style-type: none;
@@ -142,6 +140,26 @@ th {
     color: #333;
 }
 
+.table-menu {
+  text-align: center;
+}
+
+.table-menu button{
+  text-align: center;
+  padding: 0.5em 1em;
+  border: none;
+  margin: 0 0.5em;
+}
+
+.active-button {
+  background-color: #595fb9;
+  color: #fff; 
+}
+
+.inactive-button {
+  background-color: #9195ca;
+  color: #fff; 
+}
 
 
 /* Form styles*/
@@ -162,13 +180,14 @@ th {
 form .form-row .input-group{
   position: relative;
   margin: 0 1em;
+  max-width: 600px;
 }
 form .form-row .textarea{
   height: 70px;
 }
 .input-group input {
   display: block;
-  width: 300px;
+  width: 100%;
   height: 100%;
   border: none;
   font-size: 17px;
@@ -184,7 +203,6 @@ table{
   width: 100%;
   background-color: #9BA2FF31;
 }
-
 
 
 /* .inputForm {
