@@ -37,7 +37,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ user, classes, setUser }) => 
       // Update user state
       setUser({ ...user });
     } else {
-      alert('Class is fully booked');
+      alert('Passet är fullbokat');
     }
   };
 
