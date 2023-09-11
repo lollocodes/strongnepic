@@ -30,12 +30,8 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
     setClasses([...classes, newClass]);
   };
 
-  const handleUserClick = () => {
-    setDisplayUsers(true);
-  };
-
-  const handleGymClassClick = () => {
-    setDisplayUsers(false);
+  const handleTabClick = (isUsersTab: boolean) => {
+    setDisplayUsers(isUsersTab);
   };
 
   return (
@@ -49,15 +45,20 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
       </section>
 
       <div className='table-menu'>
-        <button className={`table-menu-btn ${displayUsers ? 'active-button' : 'inactive-button'}`}
- onClick={handleUserClick}>Användare</button>
-        <button className={`table-menu-btn ${!displayUsers ? 'active-button' : 'inactive-button'}`}
- onClick={handleGymClassClick}>Pass</button>
+        <button
+          className={`table-menu-btn ${displayUsers ? 'active-button' : 'inactive-button'}`}
+          onClick={() => handleTabClick(true)}
+        >
+          Användare
+        </button>
+        <button
+          className={`table-menu-btn ${!displayUsers ? 'active-button' : 'inactive-button'}`}
+          onClick={() => handleTabClick(false)}
+        >
+          Pass
+        </button>
       </div>
-
       {displayUsers ? <UserTable users={users} /> : <GymClassTable classes={classes} onDeleteClass={onDeleteClass} />}
-
-      
     </div>
   );
 };
