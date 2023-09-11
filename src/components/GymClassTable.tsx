@@ -41,7 +41,7 @@ const GymClassTable: React.FC<GymClassTableProps> = ({ classes, onDeleteClass })
           <th>Pass</th>
           <th>Tid</th>
           <th>Varaktighet</th>
-          <th>Tillgängliga platser</th>
+          <th>Bokade platser</th>
           <th>Bokningar</th>
           <th>Åtgärder</th>
         </tr>

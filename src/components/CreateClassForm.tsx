@@ -22,6 +22,7 @@ const CreateClassForm: React.FC<CreateClassFormProps> = ({ createNewClass }) => 
 
   const handleSubmitClass = (e: React.FormEvent) => {
     e.preventDefault();
+
     const newUniqueId = generateUniqueId();
     const updatedNewClass: GymClass = {
       ...newClass,
@@ -35,7 +36,7 @@ const CreateClassForm: React.FC<CreateClassFormProps> = ({ createNewClass }) => 
   return (
     <>
       <form className="inputForm" onSubmit={handleSubmitClass}>
-        <div className="fieldset">
+        <div>
           <div className="form-row">
             <div className="input-group">
               <label htmlFor="name">Namn på pass</label>

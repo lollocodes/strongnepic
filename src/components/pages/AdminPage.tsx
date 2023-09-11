@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { GymClass } from '../../types/GymClass';
-import { useNavigate } from 'react-router';
 import { User } from '../../types/User';
 import CreateClassForm from '../CreateClassForm';
 import UserTable from '../UserTable';
@@ -36,10 +35,8 @@ const AdminPage: React.FC<AdminPageProps> = ({ users, classes, setClasses }) => 
 
   return (
     <div>
-      <h1>Admin</h1>
-
       {/* Section for adding Gym classes */}
-      <section>
+      <section className='fieldset'>
         <h2>Lägg till pass</h2>
         <CreateClassForm createNewClass={createNewClass} />
       </section>

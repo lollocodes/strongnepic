@@ -167,6 +167,7 @@ th {
 .fieldset {
     background-color: #9ba2ff31;
     border: none;
+    padding: 2em;
 }
 
 /* Gjorde egen för h2, se längre ned */
@@ -180,7 +181,6 @@ th {
 
 form .form-row .input-group{
   position: relative;
-  margin: 0 1em;
   max-width: 600px;
 }
 form .form-row .textarea{
