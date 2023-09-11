@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GymClass } from '../types/GymClass';
 import { getUserById } from '../services/userService';
 import { formatDate, getMinutes } from '../utils/utils';
@@ -9,6 +9,30 @@ type GymClassTableProps = {
 };
 
 const GymClassTable: React.FC<GymClassTableProps> = ({ classes, onDeleteClass }) => {
+  const [usersData, setUsersData] = useState<Record<number, string>>({});
+
+  // Fetch user data when the component mounts
+  useEffect(() => {
+    const fetchUsersData = async () => {
+      // store data with keys are type number and values are type string
+      const userData: Record<number, string> = {};
+      for (const cls of classes) {
+        for (const userId of cls.bookedUsers) {
+          if (!userData[userId]) {
+            const user = getUserById(userId);
+            if (user) {
+              userData[userId] = user.email;
+            }
+          }
+        }
+      }
+      setUsersData(userData);
+    };
+
+    fetchUsersData();
+  }, [classes]);
+  
+  
   return (
     <table>
       <thead>
@@ -33,12 +57,11 @@ const GymClassTable: React.FC<GymClassTableProps> = ({ classes, onDeleteClass })
               {cls.bookedUsers.length} / {cls.capacity}
             </td>
             <td>
-              {cls.bookedUsers.map((id) => {
-                const user = getUserById(id);
-                return (
-                  <li key={user?.id}>{user?.email}</li>
-                );
-              })}
+              <ul>
+                {cls.bookedUsers.map((userId) => (
+                  <li key={userId}>{usersData[userId]}</li>
+                ))}
+              </ul>
             </td>
             <td>
               <button className='bookBtn' onClick={() => onDeleteClass(cls.id)}>

@@ -33,9 +33,11 @@ const UpcomingClassesTable: React.FC<UpcomingClassesTableProps> = ({ user, class
               {cls.bookedUsers.length} / {cls.capacity}
             </td>
             <td>
-              <button onClick={() => bookClass(cls, user as User)} className="bookBtn">
-                Boka
-              </button>
+              {cls.bookedUsers.length < cls.capacity && (
+                <button onClick={() => bookClass(cls, user)} className="bookBtn">
+                  Boka
+                </button>
+              )}
             </td>
           </tr>
         ))}
