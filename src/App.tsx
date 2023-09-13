@@ -40,6 +40,39 @@ function App() {
       bookedClasses: []
     }
   ];
+
+  const mockClasses: GymClass[] = [
+    {
+      id: 1,
+      name: "Kettlebell",
+      capacity: 20,
+      booked: 5,
+      date: "2023-09-10",
+      starttime: "18:00",
+      endtime: "19:00",
+      bookedUsers: [2]
+    },
+    {
+      id: 2,
+      name: "Padel",
+      capacity: 15,
+      booked: 10,
+      date: "2023-09-12",
+      starttime: "18:00",
+      endtime: "19:00",
+      bookedUsers: [2]
+    },
+    {
+      id: 3,
+      name: "FYS",
+      capacity: 10,
+      booked: 8,
+      date: "2023-09-15",
+      starttime: "18:00",
+      endtime: "19:00",
+      bookedUsers: []
+    }
+  ];
   
   useEffect(() => {
     // fetch('/mockData.json')
@@ -60,6 +93,7 @@ function App() {
     //   });
       // You can use the mock data here if needed.
       setUsers(mockUsers);
+      setClasses(mockClasses);
   }, []);
   
 
